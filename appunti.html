@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appunti</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        h1 { color: #333; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 10px; }
+        a { color: #1a73e8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <h1>Appunti</h1>
+    <ul>
+        <li><a href="#" onclick="showInfo('Matematica', '20€', '123-456-7890')">Matematica</a></li>
+        <li><a href="#" onclick="showInfo('Fisica', '25€', '098-765-4321')">Fisica</a></li>
+        <li><a href="#" onclick="showInfo('Chimica', '22€', '111-222-3333')">Chimica</a></li>
+    </ul>
+    <div id="info"></div>
+    <p><a href="index.html">Torna alla home</a></p>
+
+    <script>
+        function showInfo(materia, costo, contatto) {
+            document.getElementById('info').innerHTML = `
+                <h2>${materia}</h2>
+                <p>Costo: ${costo}</p>
+                <p>Contatto: ${contatto}</p>
+            `;
+        }
+    </script>
+</body>
+</html>

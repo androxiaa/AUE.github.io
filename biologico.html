@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biologico</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
+        h1 { color: #333; }
+        ul { list-style-type: none; padding: 0; }
+        li { margin-bottom: 10px; }
+        a { color: #1a73e8; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        #ordine { margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Prodotti Biologici</h1>
+    <ul>
+        <li><a href="#" onclick="showInfo('Uova', '0.50€')">Uova</a></li>
+        <li><a href="#" onclick="showInfo('Pomodori', '2.00€')">Pomodori</a></li>
+        <li><a href="#" onclick="showInfo('Cavolfiore', '1.50€')">Cavolfiore</a></li>
+    </ul>
+    <div id="info"></div>
+    <div id="ordine">
+        <h2>Ordina</h2>
+        <form onsubmit="return false;">
+            <label for="telefono">Numero di telefono:</label>
+            <input type="tel" id="telefono" required>
+            <button onclick="ordina()">Ordina</button>
+        </form>
+    </div>
+    <p><a href="index.html">Torna alla home</a></p>
+
+    <script>
+        function showInfo(prodotto, prezzo) {
+            document.getElementById('info').innerHTML = `
+                <h2>${prodotto}</h2>
+                <p>Prezzo al pezzo: ${prezzo}</p>
+            `;
+        }
+
+        function ordina() {
+            let telefono = document.getElementById('telefono').value;
+            if (telefono) {
+                alert(`Ordine effettuato! Ti contatteremo al numero ${telefono}`);
+            } else {
+                alert('Per favore, inserisci un numero di telefono valido.');
+            }
+        }
+    </script>
+</body>
+</html>
