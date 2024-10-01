@@ -3,47 +3,213 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Biologico</title>
+    <title>EcoVita - Prodotti Biologici</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
-        h1 { color: #333; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 10px; }
-        a { color: #1a73e8; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        #ordine { margin-top: 20px; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+        .prodotti-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 2em;
+        }
+        .prodotto-item {
+            flex-basis: calc(33.333% - 20px);
+            margin-bottom: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        .prodotto-item:hover {
+            transform: translateY(-5px);
+        }
+        .prodotto-item a {
+            display: block;
+            padding: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+        .prodotto-item h2 {
+            margin-top: 0;
+            color: #4CAF50;
+        }
+        #info {
+            background-color: #e9f5e9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 2em;
+        }
+        #ordine {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 2em;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            max-width: 300px;
+        }
+        label {
+            margin-bottom: 5px;
+        }
+        input[type="tel"] {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .back-link {
+            display: inline-block;
+            margin-top: 2em;
+            color: #4CAF50;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-link:hover {
+            text-decoration: underline;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
     </style>
 </head>
 <body>
-    <h1>Prodotti Biologici</h1>
-    <ul>
-        <li><a href="#" onclick="showInfo('Uova', '0.50€')">Uova</a></li>
-        <li><a href="#" onclick="showInfo('Pomodori', '2.00€')">Pomodori</a></li>
-        <li><a href="#" onclick="showInfo('Cavolfiore', '1.50€')">Cavolfiore</a></li>
-    </ul>
-    <div id="info"></div>
-    <div id="ordine">
-        <h2>Ordina</h2>
-        <form onsubmit="return false;">
-            <label for="telefono">Numero di telefono:</label>
-            <input type="tel" id="telefono" required>
-            <button onclick="ordina()">Ordina</button>
-        </form>
+    <header>
+        <div class="container">
+            <h1>EcoVita - Prodotti Biologici</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="appunti.html">Appunti</a></li>
+                <li><a href="biologico.html">Biologico</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="prodotti-list">
+            <div class="prodotto-item">
+                <a href="#" onclick="showInfo('Uova', '0.50€')">
+                    <h2>Uova</h2>
+                    <p>Uova fresche da galline allevate all'aperto</p>
+                </a>
+            </div>
+            <div class="prodotto-item">
+                <a href="#" onclick="showInfo('Pomodori', '2.00€')">
+                    <h2>Pomodori</h2>
+                    <p>Pomodori biologici coltivati localmente</p>
+                </a>
+            </div>
+            <div class="prodotto-item">
+                <a href="#" onclick="showInfo('Cavolfiore', '1.50€')">
+                    <h2>Cavolfiore</h2>
+                    <p>Cavolfiori freschi e croccanti</p>
+                </a>
+            </div>
+        </div>
+
+        <div id="info"></div>
+
+        <div id="ordine">
+            <h2>Ordina</h2>
+            <form onsubmit="return false;">
+                <label for="telefono">Numero di telefono:</label>
+                <input type="tel" id="telefono" required>
+                <button onclick="ordina()">Ordina</button>
+            </form>
+        </div>
+
+        <a href="index.html" class="back-link">Torna alla home</a>
     </div>
-    <p><a href="index.html">Torna alla home</a></p>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 EcoVita. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
 
     <script>
         function showInfo(prodotto, prezzo) {
             document.getElementById('info').innerHTML = `
                 <h2>${prodotto}</h2>
-                <p>Prezzo al pezzo: ${prezzo}</p>
+                <p><strong>Prezzo al pezzo:</strong> ${prezzo}</p>
+                <p>I nostri prodotti biologici sono coltivati senza l'uso di pesticidi o fertilizzanti chimici, garantendo la massima qualità e rispetto per l'ambiente.</p>
             `;
         }
 
         function ordina() {
             let telefono = document.getElementById('telefono').value;
             if (telefono) {
-                alert(`Ordine effettuato! Ti contatteremo al numero ${telefono}`);
+                alert(`Ordine effettuato! Ti contatteremo al numero ${telefono} per confermare i dettagli dell'ordine.`);
             } else {
                 alert('Per favore, inserisci un numero di telefono valido.');
             }

@@ -3,21 +3,155 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Appunti e Biologico</title>
+    <title>EcoVita - Appunti e Biologico</title>
     <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 20px; }
-        h1 { color: #333; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 10px; }
-        a { color: #1a73e8; text-decoration: none; }
-        a:hover { text-decoration: underline; }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        header {
+            background-color: #4CAF50;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+        nav {
+            background-color: #333;
+            padding: 10px 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #4CAF50;
+        }
+        .hero {
+            background-image: url('/api/placeholder/1200/400');
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 2em;
+        }
+        .hero-content {
+            background-color: rgba(0,0,0,0.6);
+            padding: 2em;
+            border-radius: 10px;
+        }
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 0.5em;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #45a049;
+        }
+        .features {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 2em;
+        }
+        .feature {
+            flex-basis: calc(50% - 20px);
+            background-color: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            margin-top: 2em;
+        }
     </style>
 </head>
 <body>
-    <h1>Benvenuti al nostro sito</h1>
-    <ul>
-        <li><a href="appunti.html">Appunti</a></li>
-        <li><a href="biologico.html">Biologico</a></li>
-    </ul>
+    <header>
+        <div class="container">
+            <h1>EcoVita</h1>
+        </div>
+    </header>
+    
+    <nav>
+        <div class="container">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="appunti.html">Appunti</a></li>
+                <li><a href="biologico.html">Biologico</a></li>
+                <li><a href="#contatti">Contatti</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Benvenuti nel Mondo del Biologico</h2>
+                <p>Scopri la nostra selezione di prodotti biologici e appunti sulla vita eco-sostenibile</p>
+                <a href="#" class="cta-button">Esplora Ora</a>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="feature">
+                <h3>Appunti</h3>
+                <p>Accedi a una vasta collezione di appunti su temi ecologici, sostenibilità e stile di vita sano.</p>
+            </div>
+            <div class="feature">
+                <h3>Prodotti Biologici</h3>
+                <p>Scopri la nostra gamma di prodotti biologici certificati, dal campo alla tua tavola.</p>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 EcoVita. Tutti i diritti riservati.</p>
+        </div>
+    </footer>
 </body>
 </html>
